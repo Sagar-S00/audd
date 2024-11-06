@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+
+html,body {
+  background-image: url('bb.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* ... (other styles remain unchanged) */
+
+
+    #navbar {
+
+      position: relative;
+      text-align: right;
+    }
+
+    #navbar-toggle-button {
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    #navbar-content {
+      display: none;
+      /* Initially hide the content */
+    }
+
+    #navbar-content ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    #navbar-content li {
+      margin: 5px 0;
+    }
+
+    .user-icon-container {
+      position: relative;
+    }
+
+
+    .dot-red,
+    .dot-green {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      top: 5px;
+      right: 5px;
+      z-index: 1;
+    }
+
+    .dot-red {
+      background-color: red;
+    }
+
+    .dot-green {
+      background-color: green;
+    }
+
+    
+
+  #host-profile .speaker p {
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: small;
+}
+    .user-mute-icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 20px;
+      /* adjust the size of the mute icon as needed */
+      height: 20px;
+    }
+
+    .left-aligned {
+      float: left;
+    }
+
+    .user-icons-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.user-icons-inner {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.transparent-line {
+        cursor: pointer;
+      width: 1cm; /* Set the width to 2 centimeters */
+      height: 3px;
+      background-color: rgba(255, 255, 255, 0.8); /* Adjust the alpha value for transparency */
+      margin: 0 auto; /* Center the line horizontally */
+      margin-top: 10px; /* Add some top margin for better visibility */
+    }
+#uu .speaker{
+    flex: 0 0 30%;
+    margin: 0 10px;
+    width: 120px;
+    margin: 0.5em;
+}
+#members {
+    background: rgba(0, 0, 0, 0.3);
+    overflow-x: hidden;
+    white-space: nowrap;
+    border-radius: 8px;
+    width: 355px; 
+    height: 200px;
+    margin-left: 10px;
+}
+#profile-container {
+    display: flex;
+    margin-top: 10px;
+}
+#profile-container {
+  position: relative;
+  display: flex;
+}
+#profile-container {
+  position: relative;
+  display: flex;
+}
+
+#profile-up-container {
+  background: rgba(0, 0, 0, 0.2);
+  overflow-x: hidden;
+  white-space: nowrap;
+  border-radius: 8px;
+  width: 300px;
+  height: 50px;
+  margin-top: 10px;
+  margin-left: 10px; 
+  z-index: 1;
+  margin-right: 10px;
+}
+
+
+#onlineusers {
+  position: absolute;
+  top: 10px;
+  left: 90px;
+  width: 40px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  /* white-space: nowrap; */
+  overflow-x: hidden;
+  z-index: 2; 
+  /* transform: translateX(-50%); Center the container horizontally */
+  display: flex;
+  align-items: center;
+}
+
+.green-dot {
+  width: 10px;
+  height: 10px;
+  background-color: green;
+  border-radius: 50%;
+  transform: translateX(10px);
+  margin-left: 4px;
+  margin-bottom: 15px;
+}
+
+.online-users-text {
+  color: white;
+  font-size: 12px;
+  transform: translateY(10px);
+}
+
+#host-profile .speaker[style]{
+  width: 70px !important;        
+  margin-left:10px !important;
+}
+
+#host-profile .speaker .mute-icon {
+  position: absolute;
+  top: 17px;
+  left: 19px;
+  width: 40px;
+  height: 40px;
+  z-index: 3;
+    
+}
+
+
+
+
+.speaker{
+  position: relative;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  text-align: center;
+}
+
+
+
+
+
+
+a {
+  color: #646cff;
+  text-decoration: none;
+}
+a:hover {
+  color: #535bf2;
+}
+
+
+#container{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+#room-header{
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 0;
+  display: none;
+}
+
+#room-header-controls{
+  display: flex;
+}
+
+#room-header-controls > img {
+  margin: 0 2px;
+}
+
+.control-icon{
+  background-color: indianred;
+  border: none;
+  padding: 0.5em;
+  height: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#uu{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-top: 10px;
+}
+
+
+#avatars{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1em 0;
+}
+
+.avatar-selection{
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+  border: 2px solid #FFF;
+  border-radius: 50%;
+  opacity: .5;
+  cursor: pointer;
+  margin: 0.25em;
+}
+
+/* .user-avatar {
+  position: relative; 
+  height: 60px;
+  width: 60px;
+  object-fit: contain;
+  border: 2px solid #FFF;
+  border-radius: 50%;
+} */
+
+.avatar-frame {
+  position: relative;
+  display: inline-block;
+  width: 64px; /* Adjust the width to accommodate the border */
+  height: 64px; /* Adjust the height to accommodate the border */
+  /* overflow: hidden; */
+}
+
+.frame {
+  width: 110%;
+  height: 110%;
+  object-fit: cover; /* This ensures the frame image covers the entire container */
+  position: absolute;
+  top: -6px;
+  right: 0;
+  z-index: 2; /* Set a higher z-index to ensure the frame is above the user avatar */
+}
+
+.user-avatar {
+  width: 60px; /* Keep the user avatar width */
+  height: 60px; /* Keep the user avatar height */
+  display: block;
+ border: 2px solid #FFF; 
+  border-radius: 50%;
+  position: relative; /* Change the position to relative */
+  z-index: 1; /* Set a higher z-index to ensure the user avatar is above the frame */
+}
+
+
+.mute-icon {
+  position: absolute;
+  top: 11px;
+  left: 35px;
+  width: 40px;
+  height: 40px;
+  z-index: 3;
+}
+
+/* #host-profile .speaker img.user-avatar {
+  overflow: hidden;
+  display: inline-block;
+} */
+
+#form input{
+  width: 100%;
+  padding: 1em;
+  margin-bottom:2em;
+  box-sizing: border-box;
+}
+
+#form label{
+  margin-bottom: 0.5em;
+}
+
+#form-fields{
+  display: flex;
+  flex-direction: column;
+}
+

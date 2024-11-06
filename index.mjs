@@ -9,7 +9,8 @@ import axios from "axios";
 import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
-const mongoURL = 'mongodb+srv://raku:raku1234@cluster0.7dhk4es.mongodb.net/?retryWrites=true&w=majority';
+const mongoURL = 'mongodb+srv://milamujhe14:ayato890@cluster0.0zqjrl1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+
 
 
 await mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true });

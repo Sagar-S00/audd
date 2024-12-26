@@ -1,48 +1,18 @@
 import * as crypto from "crypto";
 import axios from "axios";
 import { stringify } from "querystring";
-import * as cheerio from 'cheerio';
+
 
 
 const proxyConfig = false;
 
-
-export async function getDeeplinkValues(url) {
-  try {
-      const { data } = await axios.get(url);
-      const $ = cheerio.load(data);
-      const scriptTag = $('script')
-          .toArray()
-          .find((script) => script.children[0] && script.children[0].data.includes('ServerData.deeplink'));
-
-      if (scriptTag) {
-          const match = /ServerData\.deeplink\s*=\s*"([^"]+)"/.exec(scriptTag.children[0].data);
-          if (match) {
-              const deeplink = match[1];
-              const regex = /narviiapp:\/\/x(\d+)\/chat-thread\/([a-f0-9\-]+)/;
-              const deeplinkMatch = regex.exec(deeplink);
-              if (deeplinkMatch) {
-                  return { ndcId: deeplinkMatch[1], objectId: deeplinkMatch[2] };
-              }
-          }
-      }
-      return null;
-  } catch (error) {
-      console.error('Error fetching or parsing the page:', error);
-      return null;
-  }
-}
-
 export async function getLinkInfo(code) {
-  const url = `http://service.aminoapps.com/api/v1/g/s/link-resolution?q=${code}`;
+  const url = `https://nameless-queen-a85d.2o8bynlc5s.workers.dev/?url=${code}`;
   const response = await axios.get(url, {
-    
-    headers: buildHeaders(),
-    proxy: proxyConfig
   });
 
   if (response.status === 200) {
-    const linkInfo = response.data["linkInfoV2"]["extensions"]["linkInfo"];
+    const linkInfo = response.data;
     return linkInfo;
   } else {
     throw new Error("Failed to fetch link info.");

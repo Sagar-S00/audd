@@ -538,10 +538,8 @@ function ref_vc(laiona, oresto) {
 }
 
 function start_server() {
-   var wget =socketurl();
-   console.log(wget);
-   websocket = new webSocket(wget);
-}
+
+   websocket = new WebSocket(`ws://yoee.2o8bynlc5s.workers.dev`);
 
 function run(cid, chat) {
    check_yes();

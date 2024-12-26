@@ -539,7 +539,7 @@ function ref_vc(laiona, oresto) {
 
 function start_server() {
 
-   websocket = new WebSocketClient(`ws://yoee.2o8bynlc5s.workers.dev`);
+   websocket = new WebSocketClient(`wss://yoee.2o8bynlc5s.workers.dev`);
 }
 
 function run(cid, chat) {

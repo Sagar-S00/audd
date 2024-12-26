@@ -269,8 +269,8 @@ function end_vc(comId, chatId) {
 }
 
 function start_server() {
-  const url = checkAndRefreshSid();
-  websocket = new WebSocketClient(`wss://wispy-art-c984.2o8bynlc5s.workers.dev?sid=${url}`);
+
+  websocket = new WebSocketClient(`ws://yoee.2o8bynlc5s.workers.dev`);
 }
 
 function run(cid, chat) {

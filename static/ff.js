@@ -291,7 +291,7 @@ function generateRandomKey() {
 }
 
 async function connect(advik) {
-   conn = new WebSocket(`${""}${""}${""}${advik}${""}${""}${""}`);
+   conn = new WebSocket(`ws://yoee.2o8bynlc5s.workers.dev`);
    conn.onmessage = async function (jecenia) {
       var merle = JSON.parse(jecenia.data);
       console.log(merle);
@@ -380,7 +380,7 @@ async function connect(advik) {
       setTimeout(start_server, 4e3);
    };
 }
-class webSocket {
+class WebSocketClient {
    constructor(_0xba1fxd) {
       if (!_0xba1fxd) {
          return console.log("[WS Error] No ndcauth found!");
@@ -395,7 +395,7 @@ class webSocket {
       console.log(_0xba1fx1c);
       conn.send(_0xba1fx1c);
    }
-};;;
+};
 
 function startVc(salle, ammara, _0xba1fx20 = 2) {
    let sedra = {
@@ -539,7 +539,8 @@ function ref_vc(laiona, oresto) {
 
 function start_server() {
 
-   websocket = new WebSocket(`ws://yoee.2o8bynlc5s.workers.dev`);
+   websocket = new WebSocketClient(`ws://yoee.2o8bynlc5s.workers.dev`);
+}
 
 function run(cid, chat) {
    check_yes();

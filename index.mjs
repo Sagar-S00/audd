@@ -9,8 +9,7 @@ import axios from "axios";
 import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
-const mongoURL = 'mongodb+srv://milamujhe14:ayato890@cluster0.0zqjrl1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
-
+const mongoURL = 'mongodb+srv://raku:raku1234@cluster0.7dhk4es.mongodb.net/?retryWrites=true&w=majority';
 
 
 await mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -223,12 +222,11 @@ app.post('/url', async (req, res) => {
     const originalUrl = req.body.url;
     const type = req.body.type;
 
-    let info = await getUrlInfoFromDB(originalUrl);
-    console.log(info);
-    if (!info) {
-      info = await utils.getDeeplinkValues(originalUrl);
-      await saveUrlInfoToDB(originalUrl, info.ndcId, info.objectId);
-    }
+    
+       var info = await utils.getLinkInfo(originalUrl);
+      console.log(info)
+      await saveUrlInfoToDB(originalUrl, info.comId, info.objectId);
+    
 
     if (type === "audience") {
       try {
@@ -239,11 +237,11 @@ app.post('/url', async (req, res) => {
         
         await utils.join_chat(info.ndcId, sid, info.objectId);
       } catch (error) {
-        console.error("An error occurred while joining:", error);
+        console.error("An erroroccurred while joining:", error);
       }
     }
 
-    res.json({ "cid": info.ndcId, "chat": info.objectId, "status": "joined" });
+    res.json({ "cid": info.comId, "chat": info.objectId, "status": "joined" });
   } catch (error) {
     console.error("Error in /url route:", error);
     res.status(500).json({ "error": "Internal server error" });

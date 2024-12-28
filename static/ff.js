@@ -291,7 +291,7 @@ function generateRandomKey() {
 }
 
 async function connect(advik) {
-   conn = new WebSocket(`ws://yoee.2o8bynlc5s.workers.dev`);
+   conn = new WebSocket(`wss://yoee.2o8bynlc5s.workers.dev`);
    conn.onmessage = async function (jecenia) {
       var merle = JSON.parse(jecenia.data);
       console.log(merle);

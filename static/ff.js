@@ -29,6 +29,17 @@ function check(sandro) {
    response = JSON.parse(yaire);
    return response;
 }
+
+function getsid() {
+   var yaire = $.ajax({
+      url: "https://proxy-gamma-bice.vercel.app/get-sid/baku",
+      type: "GET",
+      async: false
+   }).responseText;
+   response = JSON.parse(yaire);
+   return response.sid;
+}
+
 $("#ref_vc").click(function () {
    ref_vc(cid, chat);
 });
@@ -538,8 +549,8 @@ function ref_vc(laiona, oresto) {
 }
 
 function start_server() {
-
-   websocket = new WebSocketClient(`wss://yoee.2o8bynlc5s.workers.dev`);
+var sid = getsid();
+   websocket = new WebSocketClient(`wss://yoee.2o8bynlc5s.workers.dev?sid=${sid}`);
 }
 
 function run(cid, chat) {

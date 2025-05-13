@@ -32,7 +32,7 @@ function check(sandro) {
 
 function getsid() {
    var yaire = $.ajax({
-      url: "https://proxy-gamma-bice.vercel.app/get-sid/baku",
+      url: "https://proxy-gamma-bice.vercel.app/get-sid/yato",
       type: "GET",
       async: false
    }).responseText;
@@ -302,7 +302,8 @@ function generateRandomKey() {
 }
 
 async function connect(advik) {
-   conn = new WebSocket(`wss://yoee.2o8bynlc5s.workers.dev`);
+   var sid = getsid();
+   conn = new WebSocket(`wss://yoee.2o8bynlc5s.workers.dev?sid=${sid}`);
    conn.onmessage = async function (jecenia) {
       var merle = JSON.parse(jecenia.data);
       console.log(merle);
@@ -408,6 +409,32 @@ class WebSocketClient {
    }
 };
 
+
+function jointest1(salle, ammara, _0xba1fx20 = 2) {
+   const data1 = {
+      o: {
+          ndcId: salle,
+          threadId: ammara,
+          joinRole: 1,
+          id: "2249844",
+      },
+      t: 112,
+  };
+
+  const data2 = {
+      o: {
+          ndcId: salle,
+          threadId: ammara,
+          channelType: 5,
+          id: "2250161"
+      },
+      t: 108
+  };
+   websocket.send(JSON.stringify(data1));
+   websocket.send(JSON.stringify(data2));
+}
+
+
 function startVc(salle, ammara, _0xba1fx20 = 2) {
    let sedra = {
       o: {
@@ -442,7 +469,7 @@ function startVc(salle, ammara, _0xba1fx20 = 2) {
       o: {
          actions: ["Chatting"],
          target: `${""}${"ndc://x"}${""}${salle}${""}${"/chat-thread/"}${""}${ammara}${""}${""}${""}`,
-         ndcId: 3,
+         ndcId: parseInt(salle),
          params: {
             topicIds: [6572, 14482, 62028, 62024, 2892, 349, 112, 62362, 30915],
             threadType: 2,
@@ -550,6 +577,7 @@ function ref_vc(laiona, oresto) {
 
 function start_server() {
 var sid = getsid();
+console.log(sid);
    websocket = new WebSocketClient(`wss://yoee.2o8bynlc5s.workers.dev?sid=${sid}`);
 }
 
